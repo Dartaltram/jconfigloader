@@ -1,0 +1,25 @@
+{
+	"Version" : "1.0",
+	"boolParam" : true,
+	"intParam" : 5,
+	"floatParam" : 2.5,
+	"nullParam" : null,
+
+	"First_Object" : {
+		"fo_firstParam" : true,
+		"fo_secondParam" : 5,
+		"fo_thirdParam" : "hello world"
+		},
+
+	"Second_Object" : {
+		"so_firstParam" : false,
+		"so_secondParam" : 0,
+		"so_thirdParam" : "goodbye world",
+		"so_fourthParam" : {
+			"so_fp_Iparam" : 55.24,
+			"so_fp_IIparam" : true,
+			"so_fp_IIIparam" : "3rd layer",
+			"so_fp_IVparam" : [ 123, "apple", null]
+		}
+	}
+}
