@@ -1,7 +1,7 @@
 //COMPILER: g++ -std=c++17 Test.cpp -lgtest -lgtest_main -pthread ../jconfigloader.cpp -o test_jconfigloader
 
 #include <iostream>
-#include "../jconfigloader.h"
+#include "../headers/jconfigloader.h"
 
 #include <gtest/gtest.h>
 

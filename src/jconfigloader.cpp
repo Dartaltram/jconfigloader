@@ -1,4 +1,4 @@
-#include "jconfigloader.h"
+#include "../headers/jconfigloader.h"
 
 
 json* jconfigloader::parameterObj::load_data(string filePath, std::vector<string> keys, std::string* default_data, size_t data_length) {
