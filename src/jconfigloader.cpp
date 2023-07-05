@@ -8,11 +8,27 @@ json* jconfigloader::parameterObj::load_data(string filePath, std::vector<string
         throw std::runtime_error("jconfigloader:: no file path provided");
 
 
-    std::filesystem::path pathObj(filePath.substr(0, filePath.find_last_of('/')));
-    if (!std::filesystem::exists(pathObj)) {
+    //check directory path <program path>/config_<prgName>/scriber_init.json
+    // create config directory if needed
+    std::string dirPath = filePath.substr(0, filePath.find_last_of('/'));
+
+    std::filesystem::path dirPathObj(dirPath);
+    if (!std::filesystem::is_directory(dirPathObj)) {
+
+        std::string subDirPath = dirPath.substr(0, dirPath.find_last_of('/'));
+        std::filesystem::path subDirPathObj(subDirPath);
+
+        if (!std::filesystem::is_directory(subDirPathObj))
+            throw std::runtime_error("jconfigloader:: path does not exist: " + subDirPath);
+        else if (mkdir(dirPath.c_str(), 0777) != 0)
+            throw std::runtime_error("jconfigloader:: could not create folder: " + dirPath);
+    }
+   
+
+    if (!std::filesystem::exists(filePath)) {
 
         if (default_data == nullptr)
-            throw std::runtime_error("jconfigloader:: file not found: " + ((filePath == "") ? m_file : filePath) + ". No data present to create default file");
+            throw std::runtime_error("jconfigloader:: file not found: " + filePath + ". No data present to create default file");
         
         std::ofstream outFile(filePath, std::ios::app);
         if (outFile.is_open()) {

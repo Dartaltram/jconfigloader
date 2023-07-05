@@ -7,6 +7,8 @@
 
 #include <filesystem>
 
+#include <sys/stat.h>   //for mkdir
+
 using namespace std;
 using json = nlohmann::json;
 
