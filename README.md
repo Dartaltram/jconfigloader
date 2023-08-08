@@ -5,14 +5,12 @@ Simple class offering a loader and generator for parameters in JSON format
 ## How to Install
 Clone the repo on your computer and run the **INSTALL** shell script. You might need to up the script priviledges running this line before the install script.
 
-<pre>
 ```bash
 $ git clone https://github.com/Dartaltram/jconfigloader.git
 $ cd jconfigloader
 $ chmod +x ./INSTALL.sh
 $ sudo sh ./INSTALL.sh
 ```
-</pre>
 
 The **INSTALL** script copies the library file (.a) from the build directory in /usr/local/lib and all needed headers (.h) from the headers directory to a new folder /usr/include/jconfigloader
 
